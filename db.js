@@ -1,5 +1,5 @@
 var mongo = require('mongoose');
-var Schema = mongoose.Schema;
+var Schema = mongo.Schema;
 
 var Todo = new Schema({
 	user_id : String,
