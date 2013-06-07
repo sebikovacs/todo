@@ -6,7 +6,7 @@
 var express = require('express')
 
 //start server
-var app = module.exports = express();
+var app = express.createServer();
 
 //mongoose setup
 require('./db');
@@ -43,6 +43,8 @@ app.post('/create', routes.create );
 app.get( '/destroy/:id', routes.destroy );
 app.get( '/edit/:id', routes.edit );
 app.post( '/update/:id', routes.update );
+
+app.get('/wines', routes.findAll) 
 
 app.listen(3002, function(){
   console.log("Express server listening on port 3002");

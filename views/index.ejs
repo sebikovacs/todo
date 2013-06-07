@@ -1,3 +1,4 @@
+
 <h1><%= title %></h1>
 <form action="/create" method="post" accept-charset="utf-8">
   <input type="text" name="content" />
@@ -13,3 +14,9 @@
   	    </span>
   </p>
 <% }); %>
+
+<script type="text/template" id="wineitem_template">
+	<li>{{content}} {{updated_at}}</li>
+</script>
+<ul id="wineCollection"></ul>
+<a href="" class="get-collection">get collection</a>

@@ -4,13 +4,28 @@
  */
 require('../db');
 var mongoose = require('mongoose');
+
+//models
 var Todo = mongoose.model('Todo');
+var Wine = mongoose.model('Wine');
+
+//cookie utility
 var utils = require('connect').utils;
 
 
+exports.findAll = function (req, res, next) {
+	Todo
+  	.find({user_id: req.cookies.user_id })
+  	.sort('-updated_at')
+  	.exec(function (err, todos, count) {
+  		if(err) {
+  			return next(err);
+  		}
 
 
-
+	  	res.send(todos);
+  })
+}
 
 exports.index = function(req, res, next){
   Todo

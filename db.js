@@ -7,6 +7,13 @@ var Todo = new Schema({
 	updated_at: Date
 });
 
+var Wine = new Schema({
+	name: String,
+	measure: String,
+	qty: Number
+})
+
 mongo.model('Todo', Todo);
+mongo.model('Wine', Wine);
 
 mongo.connect('mongodb://localhost/express-todo');
