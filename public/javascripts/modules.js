@@ -11,8 +11,6 @@ var WineItem = Backbone.Model.extend({
 	_id: ''
 });
 
-
-
 var WineItemView = Backbone.View.extend({
 	initialize: function () {
 		//this.render();
